@@ -16,7 +16,7 @@ cy.fixture('User').then((users)=>{
   })
 
   it('Student creation',()=>{
-       cy.fixture('Student_valid').then((students)=>{
+       cy.fixture('Student_POST').then((students)=>{
 
       cy.wrap(students).each((student)=>{
         createStudent(student).then((res)=>{
@@ -39,7 +39,7 @@ cy.fixture('User').then((users)=>{
 
 
   it('update student by PUT',()=>{
-    cy.fixture('Studentupdate').then((students)=>{
+    cy.fixture('Student_PUT').then((students)=>{
         cy.wrap(studentIds).each((id,index)=>{
           getUpdatewithPUT(id,students[index]).then((res)=>{
             expect(res.status).to.eq(200)
@@ -52,7 +52,7 @@ cy.fixture('User').then((users)=>{
 
 
   it('update stuedent patch',()=>{
-    cy.fixture('Student_patch').then((students)=>{
+    cy.fixture('Student_PATCH').then((students)=>{
        cy.wrap(studentIds).each((id,index)=>{
         getUpdatewithPatch(id,students[index]).then((res)=>{
           expect(res.status).to.eq(200)
