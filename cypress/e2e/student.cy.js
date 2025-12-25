@@ -7,8 +7,12 @@ import {
   updateStudentPATCH
 } from "../API2/students.api";
 import { login } from "../API2/auth.api";
+
+
 describe("Test execution of studens", () => {
+
   let studentId;
+
   before(() => {
     login({ email: "vinodbhai12@gmail.com", password: "VGp12@" }).then(
       (res) => {
@@ -18,12 +22,14 @@ describe("Test execution of studens", () => {
     );
   });
 
+
   it("createstudent", () => {
     createStudent({ name: "vinodbhai", job: "web developer" }).then((res) => {
       studentId = res.body.id;
       cy.log(studentId);
     });
   });
+  
 
   it("get student with id", () => {
     getstudetnwithid(studentId).then((res) => {
