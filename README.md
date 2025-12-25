@@ -14,21 +14,6 @@ The framework is designed with **scalability and maintainability** in mind:
 - Cypress async behavior is handled correctly using command chaining
 
 ---
-## 📁 Project Structure
-cypress/
-├── fixtures/
-│ ├── User.json
-│ ├── Student_valid.json
-│ ├── Studentupdate.json
-│ └── Student_patch.json
-│
-├── e2e/
-│ └── dataDriven_student_api.cy.js
-│
-├── API2/
-│ ├── auth_datadriven.api.js
-│ └── student_datadriven.api.js
----
 ## 🔐 Auth Module (API2/auth_datadriven.api.js)
 
 - Centralized login & auth-related API logic
